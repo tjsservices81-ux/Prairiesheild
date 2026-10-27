@@ -3,4 +3,4 @@ Allow: /
 Disallow: /thank-you/
 Disallow: /admin/
 
-Sitemap: https://www.firstchoicemasonryfoundation.com/sitemap.xml
+Sitemap: https://www.prairieshieldwaterproofing.com/sitemap.xml

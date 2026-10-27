@@ -1,5 +1,5 @@
 /* ============================================================
-   FIRST CHOICE — offers.js
+   PRAIRIE SHIELD — offers.js
    Save-an-offer system. No coupon codes are shown or stored:
    the saved offer is identified by its plain-English name, which
    is attached automatically to estimate form submissions.

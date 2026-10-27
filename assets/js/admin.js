@@ -1,5 +1,5 @@
 /* ============================================================
-   FIRST CHOICE — Contract Builder (internal)
+   PRAIRIE SHIELD — Contract Builder (internal)
 
    Everything happens in the browser. Nothing is uploaded, stored
    or transmitted: the PDFs are built client-side with jsPDF and
@@ -15,10 +15,10 @@
 (function () {
   'use strict';
 
-  var BIZ = 'First Choice Masonry & Foundation Repair';
+  var BIZ = 'Prairie Shield Waterproofing & Foundation Repair';
   var PHONE = '(847) 942-0209';
-  var EMAIL = 'info@firstchoicemasonryfoundation.com';
-  var SITE = 'www.firstchoicemasonryfoundation.com';
+  var EMAIL = 'info@prairieshieldwaterproofing.com';
+  var SITE = 'www.prairieshieldwaterproofing.com';
 
   var NAVY = [11, 45, 92];
   var GOLD = [212, 175, 55];
@@ -205,10 +205,10 @@
       doc.setTextColor(255, 255, 255);
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(17);
-      doc.text('FIRST CHOICE', M, 36);
+      doc.text('PRAIRIE SHIELD', M, 36);
       doc.setFontSize(8.5);
       doc.setTextColor(212, 175, 55);
-      doc.text('MASONRY & FOUNDATION REPAIR', M, 50);
+      doc.text('WATERPROOFING & FOUNDATION REPAIR', M, 50);
     }
 
     doc.setTextColor(255, 255, 255);
@@ -342,7 +342,7 @@
     doc.setDrawColor.apply(doc, SOFT);
     doc.setLineWidth(0.8);
     var colW = (W - M * 2 - 30) / 2;
-    [['Customer', M], ['First Choice', M + colW + 30]].forEach(function (c) {
+    [['Customer', M], ['Prairie Shield', M + colW + 30]].forEach(function (c) {
       doc.line(c[1], y, c[1] + colW, y);
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(8.5);
@@ -517,7 +517,7 @@
 
   function send(doc, name) {
     if (!doc) { return false; }
-    doc.save('first-choice-' + name + '-' + fileSafe(val('cust_name')) + '.pdf');
+    doc.save('prairie-shield-' + name + '-' + fileSafe(val('cust_name')) + '.pdf');
     return true;
   }
 

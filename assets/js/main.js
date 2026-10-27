@@ -1,5 +1,5 @@
 /* ============================================================
-   FIRST CHOICE Masonry & Foundation Repair — main.js
+   PRAIRIE SHIELD Waterproofing & Foundation Repair — main.js
    Navigation, FAQ accordions, scroll reveals, count-up stats,
    header shadow, sticky mobile bar, sliders, ripples, footer year.
 

@@ -2,7 +2,7 @@
 
 ## Brand artwork: supplied by the owner
 
-The First Choice shield logo and the two promotional offer graphics
+The Prairie Shield shield logo and the two promotional offer graphics
 (`offer-500-masonry-foundation.webp`, `offer-150-chimney.webp`) were supplied
 by the business owner. No third-party licences apply.
 
@@ -23,7 +23,7 @@ Derived assets built from that artwork:
 No stock photos, downloaded images or third-party assets are used. Every
 `photo-*.webp` and both before/after placeholders were generated
 programmatically for this project as simple brand-coloured graphics. There are
-**no external licences to credit**, and **none of them depict real First Choice
+**no external licences to credit**, and **none of them depict real Prairie Shield
 projects**. They are labelled as placeholders on the page.
 
 ## Images to replace with real photos

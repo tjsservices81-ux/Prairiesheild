@@ -71,7 +71,7 @@ silently stop all 40 forms. `./tools/recaptcha.sh on` puts it back.
 
 ## 4. The email address shown on the site
 
-Still the placeholder `info@firstchoicemasonryfoundation.com`, in the footer,
+Still the placeholder `info@prairieshieldwaterproofing.com`, in the footer,
 the contact page, the privacy policy and the data Google reads. Separate from
 form delivery — this is the one customers see and write to. Send me the real
 one and it is a single pass.

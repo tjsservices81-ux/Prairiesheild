@@ -1,6 +1,6 @@
-# First Choice Masonry & Foundation Repair — Website
+# Prairie Shield Waterproofing & Foundation Repair — Website
 
-Static website for **First Choice Masonry & Foundation Repair**, Chicago.
+Static website for **Prairie Shield Waterproofing & Foundation Repair**, Chicago.
 
 > *Professional Repairs. Lasting Results.*
 
@@ -59,8 +59,8 @@ run `./tools/recaptcha.sh off`.
 
 | Item | Placeholder value | Where |
 |---|---|---|
-| Email | `info@firstchoicemasonryfoundation.com` | Footers, contact page, privacy policy, schema |
-| Final domain | `https://www.firstchoicemasonryfoundation.com` | Canonicals, Open Graph, Twitter cards, JSON-LD, `sitemap.xml`, `robots.txt` |
+| Email | `info@prairieshieldwaterproofing.com` | Footers, contact page, privacy policy, schema |
+| Final domain | `https://www.prairieshieldwaterproofing.com` | Canonicals, Open Graph, Twitter cards, JSON-LD, `sitemap.xml`, `robots.txt` |
 | GA4 ID | `G-XXXXXXXXXX` | `assets/js/tracking.js` (see `GOOGLE-ADS-GA4-SETUP.md`) |
 | Google Ads ID | `AW-XXXXXXXXX` | `assets/js/tracking.js` |
 | Ads conversion label | `XXXXXXXXXXX` | `assets/js/tracking.js` |
@@ -78,8 +78,8 @@ The phone number is live: **(847) 942-0209** / `tel:+18479420209`, set in the
 page generator, the JSON-LD schema and `assets/js/forms.js`.
 
 Tip: a project-wide search-and-replace for
-`info@firstchoicemasonryfoundation.com` and
-`https://www.firstchoicemasonryfoundation.com` updates the rest at once.
+`info@prairieshieldwaterproofing.com` and
+`https://www.prairieshieldwaterproofing.com` updates the rest at once.
 
 ## Brand
 

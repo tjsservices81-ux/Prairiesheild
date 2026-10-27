@@ -1,5 +1,5 @@
 /* ============================================================
-   FIRST CHOICE — forms.js
+   PRAIRIE SHIELD — forms.js
    AJAX submission for Netlify Forms with accessible success /
    error messaging, loading state and double-submit protection.
    Works alongside Netlify's built-in reCAPTCHA.

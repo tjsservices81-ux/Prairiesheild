@@ -3,7 +3,7 @@
 What the site needs, where each photo goes, and what to shoot.
 See `PHOTOS-STILL-NEEDED.md` for what is outstanding right now.
 
-**Nothing here is optional-quality.** These must be real First Choice jobs.
+**Nothing here is optional-quality.** These must be real Prairie Shield jobs.
 No stock photos, and no before/after pair that is not genuinely the same
 wall photographed twice.
 
