@@ -20,7 +20,7 @@ That drops the job from **212 photos to 92**.
 
 **Total outstanding: 14 service photos, 25 pairs, hero, team.**
 
-**Helical & Push Piers has no photos at all** — no image, no before/after section, not even a placeholder. Its explainer runs full width instead. Say the word and it goes back to needing photos like the rest.
+**Helical & Push Piers** now has a service photo from the old website (no before/after section).
 
 ---
 
@@ -42,7 +42,6 @@ the whole thing.
 
 | Service | What to get |
 |---|---|
-| Tuckpointing | Finished repointed wall, fresh joints visible |
 | Brick Replacement | Replaced bricks blended into the original wall |
 | Stone Repair | Repaired stone facade, sill or step |
 | Masonry Cleaning | Cleaned brick — best shot is mid-job with a clean/dirty edge |
@@ -66,13 +65,13 @@ placeholder beats a photo of the wrong trade.
 
 ## 3. Before/after — 25 services still need one pair
 
-Done: Step Repair, Chimney Rebuilds, Crawl Space Encapsulation, Brick Repair.
-(Step Repair and Crawl Space have two each — both are shown.)
+Done: Step Repair, Chimney Rebuilds, Chimney Repair, Crawl Space Encapsulation, Brick Repair.
+(Step Repair, Crawl Space and Brick Repair have two each — both are shown.)
 
 Still needed, one pair each:
 
 Basement Waterproofing, Block Wall Repair, Bowed Wall Repair,
-Brick Replacement, Chimney Repair, Commercial Masonry, Concrete Repair,
+Brick Replacement, Commercial Masonry, Concrete Repair,
 Concrete Resurfacing, Foundation Crack Repair, Foundation Repair,
 French Drain & Drain Tile, Lintel Replacement,
 Masonry Cleaning, Masonry Restoration, Masonry Sealing, Mortar Joint Repair,

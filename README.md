@@ -74,7 +74,7 @@ run `./tools/recaptcha.sh off`.
 | Legal business name | Not yet shown | Add the registered LLC name to the footer once formed |
 | Privacy policy | `/privacy-policy/` | **Must be reviewed and approved by the business before launch** |
 
-The phone number is live: **(847) 942-0209** / `tel:+18479420209`, set in the
+The phone number is live: **(847) 269-2907** / `tel:+18472692907`, set in the
 page generator, the JSON-LD schema and `assets/js/forms.js`.
 
 Tip: a project-wide search-and-replace for
@@ -85,9 +85,9 @@ Tip: a project-wide search-and-replace for
 
 | Token | Value | Used for |
 |---|---|---|
-| Navy | `#0B2D5C` | Headings, header, primary structure |
-| Construction Red | `#B22234` | Primary CTAs, alerts, accents |
-| Metallic Gold | `#D4AF37` | Highlights, rules, badges, focus rings |
+| Navy | `#1A1A2E` | Headings, header, primary structure |
+| Construction Red | `#2F6F8F` | Primary CTAs, alerts, accents |
+| Metallic Gold | `#C9A84C` | Highlights, rules, badges, focus rings |
 | White | `#FFFFFF` | Backgrounds |
 | Dark Charcoal | `#222222` | Deep sections |
 

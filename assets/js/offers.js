@@ -27,7 +27,7 @@
     var rect = originEl.getBoundingClientRect();
     var cx = rect.left + rect.width / 2;
     var cy = rect.top + rect.height / 2;
-    var colors = ['#D4AF37', '#B22234', '#0B2D5C', '#E9CF7A', '#FFFFFF'];
+    var colors = ['#C9A84C', '#2F6F8F', '#1A1A2E', '#DCC27A', '#FFFFFF'];
 
     for (var i = 0; i < 18; i++) {
       var p = document.createElement('span');

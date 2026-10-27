@@ -16,15 +16,15 @@
   'use strict';
 
   var BIZ = 'Prairie Shield Waterproofing & Foundation Repair';
-  var PHONE = '(847) 942-0209';
+  var PHONE = '(847) 269-2907';
   var EMAIL = 'info@prairieshieldwaterproofing.com';
   var SITE = 'www.prairieshieldwaterproofing.com';
 
-  var NAVY = [11, 45, 92];
-  var GOLD = [212, 175, 55];
-  var RED = [178, 34, 52];
-  var INK = [22, 32, 44];
-  var SOFT = [62, 80, 100];
+  var NAVY = [26, 26, 46];
+  var GOLD = [201, 168, 76];
+  var RED = [47, 111, 143];
+  var INK = [30, 30, 46];
+  var SOFT = [90, 90, 114];
 
   var SERVICES = [
     'Foundation Repair', 'Foundation Crack Repair', 'Bowed or Bowing Wall Repair',
@@ -207,7 +207,7 @@
       doc.setFontSize(17);
       doc.text('PRAIRIE SHIELD', M, 36);
       doc.setFontSize(8.5);
-      doc.setTextColor(212, 175, 55);
+      doc.setTextColor(201, 168, 76);
       doc.text('WATERPROOFING & FOUNDATION REPAIR', M, 50);
     }
 
