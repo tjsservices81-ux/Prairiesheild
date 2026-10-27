@@ -1,0 +1,21 @@
+{
+  "name": "First Choice Masonry & Foundation Repair",
+  "short_name": "First Choice",
+  "description": "Masonry and foundation repair for Chicago and Chicagoland.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#0B2D5C",
+  "icons": [
+    {
+      "src": "/assets/images/logo-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/logo-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

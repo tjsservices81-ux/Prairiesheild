@@ -1,0 +1,65 @@
+# Netlify configuration — First Choice Masonry & Foundation Repair
+# Static site, no build step. Clean URLs come from the folder/index.html
+# structure, so no redirects are needed for service pages.
+
+[build]
+  publish = "."
+
+# ---------- Redirects for retired URLs (preserve any existing indexing) ----------
+[[redirects]]
+  from = "/roofing-siding/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/porch-step-repair/"
+  to = "/porch-repair/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/masonry-concrete-repair/"
+  to = "/masonry-restoration/"
+  status = 301
+  force = true
+
+# ---------- Security headers ----------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# ---------- Cache headers ----------
+# Everything under /assets/ is referenced from the HTML with a ?v=<hash> of
+# the file's own contents, so a long immutable cache is safe: replacing the
+# artwork changes the URL and the browser fetches it. Without that stamp,
+# `immutable` means a visitor who has seen the old logo would keep it for a
+# year — no reload, no redeploy and no cache purge would dislodge it.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Root-level icons are referenced by bare filename from <link> tags and the
+# manifest, so they get no version stamp. Keep them revalidating daily.
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, must-revalidate"
+
+[[headers]]
+  for = "/favicon.ico"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, must-revalidate"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Note: Netlify serves /404.html automatically for unknown paths on static
+# sites — no catch-all rule is needed, and adding one would break clean URLs.

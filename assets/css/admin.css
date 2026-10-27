@@ -1,0 +1,172 @@
+/* ============================================================
+   Contract Builder — internal admin page.
+   Uses the site's brand tokens so the tool looks like the company
+   it belongs to, but it is deliberately plainer than the public
+   pages: this is a form to be worked through, not a page to be sold to.
+   ============================================================ */
+
+body.admin {
+  background: var(--page-bg);
+  padding-bottom: 4rem;
+}
+
+/* ---------- Header ---------- */
+.admin-bar {
+  background: linear-gradient(135deg, var(--navy-deep), var(--navy) 60%, var(--navy-mid));
+  border-bottom: 4px solid var(--gold);
+  padding: 1rem 0;
+}
+.admin-bar__inner {
+  max-width: 64rem; margin: 0 auto; padding: 0 1.25rem;
+  display: flex; align-items: center; gap: 1.1rem; flex-wrap: wrap;
+}
+.admin-bar__logo {
+  height: 3rem; width: auto; flex-shrink: 0;
+  background: var(--white); border-radius: 10px; padding: 0.35rem 0.6rem;
+}
+.admin-bar__title {
+  font-family: var(--font-heading); font-weight: 800; font-size: 1.15rem;
+  color: var(--white); line-height: 1.2;
+}
+.admin-bar__sub { font-size: 0.82rem; color: var(--gold-soft); }
+
+/* ---------- Layout ---------- */
+.admin-wrap { max-width: 64rem; margin: 0 auto; padding: 1.75rem 1.25rem 0; }
+
+.admin-card {
+  background: var(--card-bg); border: 1px solid var(--line);
+  border-radius: var(--radius-lg); padding: 1.5rem 1.4rem;
+  margin-bottom: 1.25rem; box-shadow: var(--shadow-sm);
+}
+.admin-card h2 {
+  font-size: 1.1rem; margin-bottom: 1.1rem; padding-bottom: 0.7rem;
+  border-bottom: 2px solid var(--grey-100); color: var(--navy);
+}
+
+.admin-grid { display: grid; gap: 1rem; }
+@media (min-width: 42em) { .admin-grid { grid-template-columns: 1fr 1fr; } }
+.admin-grid__full { grid-column: 1 / -1; }
+
+.admin-card label {
+  display: block; font-weight: 600; font-size: 0.88rem; color: var(--ink-soft);
+}
+.admin-card input,
+.admin-card textarea {
+  width: 100%; margin-top: 0.35rem; padding: 0.65rem 0.8rem;
+  border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--white); color: var(--ink); font-weight: 400;
+  font-family: var(--font-body);
+}
+.admin-card textarea { resize: vertical; line-height: 1.6; }
+.admin-card input:focus-visible,
+.admin-card textarea:focus-visible {
+  outline: 3px solid rgba(11, 45, 92, 0.35); outline-offset: 1px; border-color: var(--navy);
+}
+.req { color: var(--red); }
+
+/* ---------- Service checkboxes ---------- */
+.admin-fieldset { border: 0; padding: 0; margin: 1.25rem 0; }
+.admin-fieldset legend {
+  font-weight: 600; font-size: 0.88rem; color: var(--ink-soft); padding: 0;
+  margin-bottom: 0.6rem;
+}
+.admin-checks { display: grid; gap: 0.4rem 1rem; }
+@media (min-width: 36em) { .admin-checks { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 56em) { .admin-checks { grid-template-columns: repeat(3, 1fr); } }
+.admin-checks label {
+  display: flex; align-items: center; gap: 0.5rem;
+  font-weight: 500; font-size: 0.86rem; color: var(--ink); cursor: pointer;
+}
+.admin-checks input { width: auto; margin: 0; accent-color: var(--navy); }
+
+/* ---------- Financing toggle ---------- */
+.admin-toggle {
+  display: flex; align-items: flex-start; gap: 0.9rem; cursor: pointer;
+  border: 2px solid var(--line); border-radius: var(--radius-lg);
+  padding: 1.1rem 1.2rem; transition: border-color 0.25s var(--ease), background-color 0.25s var(--ease);
+}
+.admin-toggle:has(input:checked) { border-color: var(--gold); background: #FFFCF2; }
+.admin-toggle input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.admin-toggle__box {
+  flex-shrink: 0; width: 1.5rem; height: 1.5rem; margin-top: 0.1rem;
+  border: 2px solid var(--line); border-radius: 6px; background: var(--white);
+  display: grid; place-items: center; transition: all 0.2s var(--ease);
+}
+.admin-toggle__box::after {
+  content: "✔"; color: var(--white); font-size: 0.9rem; opacity: 0; transition: opacity 0.2s var(--ease);
+}
+.admin-toggle:has(input:checked) .admin-toggle__box {
+  background: var(--success); border-color: var(--success);
+}
+.admin-toggle:has(input:checked) .admin-toggle__box::after { opacity: 1; }
+.admin-toggle input:focus-visible + .admin-toggle__box {
+  outline: 3px solid rgba(11, 45, 92, 0.35); outline-offset: 2px;
+}
+.admin-toggle strong { display: block; font-size: 0.98rem; color: var(--ink); }
+.admin-toggle small { display: block; margin-top: 0.2rem; font-size: 0.84rem; color: var(--ink-soft); line-height: 1.5; }
+
+.admin-details { margin-top: 1rem; }
+.admin-details summary {
+  cursor: pointer; font-weight: 600; font-size: 0.88rem; color: var(--navy);
+  padding: 0.5rem 0;
+}
+.admin-details textarea { font-size: 0.85rem; font-family: var(--font-body); }
+
+/* ---------- Notes ---------- */
+.admin-note {
+  font-size: 0.85rem; color: var(--ink-soft); line-height: 1.6;
+  background: var(--grey-50); border-left: 3px solid var(--navy);
+  padding: 0.8rem 1rem; border-radius: 0 var(--radius) var(--radius) 0;
+  margin: 1rem 0;
+}
+.admin-note--warn {
+  background: #FDF3F4; border-left-color: var(--red); color: #6B2229;
+}
+.admin-note code {
+  background: rgba(0,0,0,0.06); padding: 0.1em 0.35em; border-radius: 4px; font-size: 0.95em;
+}
+
+/* ---------- Actions ---------- */
+.admin-actions { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+.admin-actions .btn { flex: 1 1 14rem; justify-content: center; }
+.admin-actions .btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.admin-status {
+  margin-top: 1rem; font-size: 0.88rem; font-weight: 600; min-height: 1.4em;
+  color: var(--success);
+}
+.admin-status.is-error { color: var(--error); }
+
+/* ---------- Preview ---------- */
+#preview {
+  border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 1.5rem; background: var(--white); font-size: 0.9rem; line-height: 1.65;
+}
+#preview h3 {
+  font-size: 1rem; color: var(--navy); margin: 1.3rem 0 0.4rem;
+  padding-bottom: 0.3rem; border-bottom: 1px solid var(--grey-100);
+}
+#preview h3:first-child { margin-top: 0; }
+#preview p { margin-bottom: 0.6rem; white-space: pre-wrap; }
+#preview dl { display: grid; grid-template-columns: auto 1fr; gap: 0.3rem 1rem; }
+#preview dt { font-weight: 700; color: var(--ink-soft); }
+
+/* The single-file download is the one people want nine times out of ten */
+.admin-actions--main { margin-bottom: 0.25rem; }
+.admin-actions--main .btn { flex: 1 1 18rem; }
+.admin-details .admin-actions { margin-top: 0.6rem; }
+.admin-details .admin-actions .btn { flex: 1 1 11rem; font-size: 0.9rem; }
+
+/* Two emails go out, so the actions are labelled as two steps */
+.admin-step {
+  font-family: var(--font-heading); font-weight: 800;
+  font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--navy); margin: 1.6rem 0 0.7rem;
+  display: flex; align-items: center; gap: 0.6rem;
+}
+.admin-step:first-of-type { margin-top: 0.5rem; }
+.admin-step::after {
+  content: ""; flex: 1; height: 2px; border-radius: 2px;
+  background: linear-gradient(90deg, rgba(11, 45, 92, 0.3), transparent);
+}
+.admin-step--gold { color: #8A6D13; }
+.admin-step--gold::after { background: linear-gradient(90deg, rgba(212, 175, 55, 0.65), transparent); }

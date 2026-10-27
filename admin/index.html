@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<title>Contract Builder | First Choice Masonry &amp; Foundation Repair</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/styles.css">
+<link rel="stylesheet" href="/assets/css/admin.css">
+</head>
+<body class="admin">
+
+<header class="admin-bar">
+  <div class="admin-bar__inner">
+    <img src="/assets/images/logo-horizontal.png" alt="First Choice Masonry &amp; Foundation Repair"
+         width="900" height="265" class="admin-bar__logo">
+    <div>
+      <p class="admin-bar__title">Contract Builder</p>
+      <p class="admin-bar__sub">Internal use only — not linked from the website</p>
+    </div>
+  </div>
+</header>
+
+<main class="admin-wrap">
+
+  <p class="admin-note admin-note--warn">
+    <strong>This page is not password protected.</strong> Anyone who knows the address can open it.
+    It is hidden from Google and not linked anywhere on the site, but that is concealment, not security.
+    See <code>admin/README.md</code> for how to lock it properly before putting real customer details in it.
+  </p>
+
+  <form id="contract-form" autocomplete="off">
+
+    <section class="admin-card">
+      <h2>1 &middot; Customer</h2>
+      <div class="admin-grid">
+        <label>Full name <span class="req">*</span>
+          <input type="text" name="cust_name" required>
+        </label>
+        <label>Email address <span class="req">*</span>
+          <input type="email" name="cust_email" required>
+        </label>
+        <label>Phone
+          <input type="tel" name="cust_phone">
+        </label>
+        <label>Second email (optional — e.g. spouse)
+          <input type="email" name="cust_email2">
+        </label>
+        <label class="admin-grid__full">Property address <span class="req">*</span>
+          <input type="text" name="cust_address" required placeholder="Street, city, ZIP">
+        </label>
+      </div>
+    </section>
+
+    <section class="admin-card">
+      <h2>2 &middot; The work</h2>
+      <div class="admin-grid">
+        <label>Contract / job number
+          <input type="text" name="job_no" placeholder="e.g. FC-2026-014">
+        </label>
+        <label>Date of this contract
+          <input type="date" name="contract_date">
+        </label>
+        <label>Estimated start
+          <input type="text" name="start_date" placeholder="e.g. week of 4 May, or on permit approval">
+        </label>
+        <label>Estimated duration
+          <input type="text" name="duration" placeholder="e.g. 3&ndash;5 working days">
+        </label>
+      </div>
+
+      <fieldset class="admin-fieldset">
+        <legend>Services included</legend>
+        <div class="admin-checks" id="service-checks"></div>
+      </fieldset>
+
+      <label class="admin-grid__full">Scope of work <span class="req">*</span>
+        <textarea name="scope" rows="8" required
+          placeholder="Describe exactly what is being done, where, and with what materials. Be specific — this is the part that prevents disputes."></textarea>
+      </label>
+
+      <label class="admin-grid__full">Not included / exclusions
+        <textarea name="exclusions" rows="4"
+          placeholder="Anything explicitly outside this contract — e.g. landscaping reinstatement, painting, permits by others."></textarea>
+      </label>
+    </section>
+
+    <section class="admin-card">
+      <h2>3 &middot; Price and payment</h2>
+      <div class="admin-grid">
+        <label>Total contract price <span class="req">*</span>
+          <input type="text" name="total" required placeholder="$">
+        </label>
+        <label>Deposit due
+          <input type="text" name="deposit" placeholder="$">
+        </label>
+        <label>Balance due
+          <input type="text" name="balance" placeholder="$ — or: on completion">
+        </label>
+        <label>Discount / offer applied
+          <input type="text" name="discount" placeholder="e.g. $499.99 Off — Over $5,000">
+        </label>
+        <label class="admin-grid__full">Payment schedule and accepted methods
+          <textarea name="payment_terms" rows="3"
+            placeholder="e.g. Deposit on signing, balance within 7 days of completion. Check, card or bank transfer."></textarea>
+        </label>
+      </div>
+    </section>
+
+    <section class="admin-card">
+      <h2>4 &middot; Terms</h2>
+      <label class="admin-grid__full">Warranty
+        <textarea name="warranty" rows="3"></textarea>
+      </label>
+      <label class="admin-grid__full">Additional terms and conditions
+        <textarea name="terms" rows="10"></textarea>
+      </label>
+      <p class="admin-note">
+        These are your words, not mine. I have not written legal terms for you &mdash;
+        have whatever you put here reviewed by an attorney before you send a signed contract to anybody.
+        A right-to-cancel notice is required by Illinois law on most home repair contracts signed at the
+        customer's home; confirm the current wording with your attorney.
+      </p>
+    </section>
+
+    <section class="admin-card">
+      <h2>5 &middot; Options</h2>
+
+      <label class="admin-toggle">
+        <input type="checkbox" name="inc_financing" id="inc_financing">
+        <span class="admin-toggle__box" aria-hidden="true"></span>
+        <span>
+          <strong>Include financial assistance information</strong>
+          <small>Attaches a second branded PDF listing where this customer can go for help
+          paying for home repairs, and adds a short paragraph to the email.</small>
+        </span>
+      </label>
+
+      <details class="admin-details" id="financing-editor">
+        <summary>Review and edit what that sheet says</summary>
+        <p class="admin-note">
+          Assistance programs open and close constantly &mdash; Chicago's own Home Repair Program is
+          <strong>not taking new registrations in 2026</strong>. So this sheet deliberately points people at the
+          phone numbers and offices that route them to whatever is running now, rather than naming programs
+          that may already be closed. Check it before you send it.
+        </p>
+        <textarea name="financing_body" rows="18"></textarea>
+      </details>
+    </section>
+
+    <section class="admin-card">
+      <h2>6 &middot; Generate</h2>
+      <p class="admin-note">
+        Everything is produced in your browser. Nothing is uploaded, stored or sent anywhere
+        until you choose to send it.
+      </p>
+      <p class="admin-step">Email 1 &middot; The contract</p>
+      <div class="admin-actions admin-actions--main">
+        <button type="button" class="btn btn--primary btn--lg" id="btn-all">
+          Download contract PDF
+        </button>
+        <button type="button" class="btn btn--navy btn--lg" id="btn-email">Open contract email</button>
+      </div>
+      <p class="admin-note">
+        One file: the branded letter first, saying exactly what the email says, then the contract.
+        Attach it and send.
+      </p>
+
+      <p class="admin-step admin-step--gold">Email 2 &middot; Help paying &mdash; only if you ticked the box</p>
+      <div class="admin-actions admin-actions--main">
+        <button type="button" class="btn btn--gold btn--lg" id="btn-financing" disabled>
+          Download financial help PDF
+        </button>
+        <button type="button" class="btn btn--outline btn--lg" id="btn-fin-email" disabled>
+          Open financial help email
+        </button>
+      </div>
+      <p class="admin-note">
+        Sent on its own, not bolted onto the contract. Money worries are private, and at the bottom
+        of a contract email this reads like a sales angle. On its own it reads as what it is.
+        The contract letter tells them to look out for it.
+      </p>
+
+      <details class="admin-details">
+        <summary>Other</summary>
+        <div class="admin-actions">
+          <button type="button" class="btn btn--outline" id="btn-contract">Contract without the letter</button>
+          <button type="button" class="btn btn--outline" id="btn-preview">Preview on screen</button>
+        </div>
+      </details>
+      <p class="admin-status" id="status" role="status" aria-live="polite"></p>
+    </section>
+
+  </form>
+
+  <section class="admin-card" id="preview-card" hidden>
+    <h2>Preview</h2>
+    <div id="preview"></div>
+  </section>
+
+</main>
+
+<!-- jsPDF is vendored rather than loaded from a CDN: this is an internal tool that
+     must work on any network, and a blocked CDN would mean no contracts. -->
+<script src="/assets/vendor/jspdf-2.5.1.umd.min.js" defer></script>
+<script src="/assets/js/admin.js" defer></script>
+</body>
+</html>
