@@ -1,107 +1,46 @@
 # Getting the forms and emails working
 
-**The code side is done and verified.** All 70 forms across 47 pages have correct
-Netlify markup — `data-netlify`, a matching hidden `form-name`, the honeypot,
-the reCAPTCHA placeholder, `method="POST"` and a no-JavaScript fallback.
-
-What is left is three things in the Netlify dashboard and one email address
-from you. None of them can be done from the code.
-
----
-
-## 1. Turn on form detection  ← nothing works without this
-
-Netlify → your site → **Forms**.
-
-If it says forms are not enabled, enable them, then **trigger a redeploy**.
-Netlify only finds forms by scanning the HTML of a deploy, so a form added
-before detection was switched on is invisible until the site is deployed again.
-
-After the redeploy you should see 41 forms listed. If the list is empty,
-nothing else on this page will help — come back to me.
-
-## 2. Point the notifications at a real inbox  ← this is "the emails"
-
-Netlify → **Forms → Form notifications → Add notification → Email notification**.
-
-- **Email to notify:** the address you actually read
-- **Form:** leave as all forms, so you never miss one from a page you forgot
-
-Worth knowing: Netlify stores every submission in the dashboard whether or not
-a notification is set. So if this is misconfigured you do not lose the leads —
-but you will not know they arrived, which amounts to the same thing.
-
-Add a second notification to a backup address. One bounced email should not
-cost you a job.
-
-## 3. reCAPTCHA — decide, then act
-
-This is the single most likely thing to break all 40 forms silently, so read
-this bit properly.
-
-`data-netlify-recaptcha="true"` is on every form. For that to work you **must**
-set two environment variables in Netlify:
-
-Netlify → **Site configuration → Environment variables**
-
-| Key | Value |
-|---|---|
-| `SITE_RECAPTCHA_KEY` | your reCAPTCHA v2 **site key** |
-| `SITE_RECAPTCHA_SECRET` | your reCAPTCHA v2 **secret key** |
-
-Get both free at google.com/recaptcha/admin — choose **reCAPTCHA v2,
-"I'm not a robot" tick box**, and add your domain. Then redeploy.
-
-**If you do not set them, submissions are rejected.** The site is now honest
-about that — it tells the customer it did not send and gives them the phone
-number — but you will have lost the lead.
-
-### Or turn it off
-
-Perfectly reasonable for a contractor site:
+All 70 forms on the site send to **one** Formspree form:
 
 ```
-./tools/recaptcha.sh off
+https://formspree.io/f/xdeegvgr
 ```
 
-Then commit and push. The honeypot stays, and Netlify runs every submission
-through its own spam filtering regardless. What you lose is a tick box between
-a customer and sending you a lead; what you gain is one less thing that can
-silently stop all 40 forms. `./tools/recaptcha.sh on` puts it back.
+Nothing else needs adding in Formspree, so there's no form per page to set up.
 
-## 4. The email address shown on the site
+## What each submission contains
 
-Still the placeholder `info@prairieshieldwaterproofing.com`, in the footer,
-the contact page, the privacy policy and the data Google reads. Separate from
-form delivery — this is the one customers see and write to. Send me the real
-one and it is a single pass.
+- The customer's name, phone, email, ZIP, service and message
+- `form-name`: the page it came from, for example `lead-chimney-repair` or
+  `lead-homepage`
+- `page-service`: the service the page is about
+- `offer`: the voucher the customer saved, or `None`
+- The email subject reads **New estimate request (lead-…)**, so you can sort
+  your inbox by page
 
----
+## In the Formspree dashboard
 
-## Test it properly once deployed
+1. **Confirm the email address.** Formspree sends a confirmation the first time
+   the form is used. Until you click it, submissions are held.
+2. **Check the notification address** under the form's *Settings* and send
+   them to the inbox you actually read.
+3. **Spam:** the forms include Formspree's `_gotcha` honeypot field, and
+   Formspree filters spam on its own. If spam gets through, turn on reCAPTCHA
+   or Formspree's spam protection under the form's settings. You don't need
+   to change the site for that.
+4. **Allowed domains (recommended):** restrict the form to
+   `prairieshieldwaterproofing.com` so other sites can't post to it.
 
-Not by looking at the screen — the screen will say it worked.
+## Testing
 
-1. Submit the homepage form with a real address you can check.
-2. Netlify → Forms — the submission should be listed within seconds.
-3. Check the inbox for the notification.
-4. Do it again from a **service page** form, because those have two forms with
-   the same name and both should land in the same bucket.
-5. Try it **with JavaScript disabled**. It should post and land you on
-   `/thank-you/`. That is the path a small number of real visitors take.
+Submit the form on the homepage and on one service page from the live site,
+then check that both arrive in your inbox and in Formspree's *Submissions* tab.
 
-If a submission shows in the dashboard but no email arrives, the problem is
-step 2. If nothing shows at all, it is step 1 or step 3.
+If a form can't send, the customer sees a message telling them it didn't go
+through, along with the phone number, so a failed send is never silent.
 
----
+## Free plan limit
 
-## What was fixed in the code
-
-- A submission can no longer report success when it was not recorded. The old
-  version treated any `res.ok` as sent; Netlify can answer 200 and still
-  discard a submission whose captcha did not verify, which would have told the
-  customer their request was on its way when it was not.
-- An uncompleted reCAPTCHA is now caught before sending, with a message asking
-  them to tick the box, rather than a generic failure after the fact.
-- The failure message now says plainly that nothing reached us and not to wait
-  for a reply, and puts the phone number in front of them.
+Formspree's free plan has a monthly submission cap. If you start getting a lot
+of leads, check your usage in the Formspree dashboard so leads don't start
+bouncing.

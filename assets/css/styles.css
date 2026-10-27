@@ -327,7 +327,6 @@ html.nav-open { overflow: hidden; }
 .form-required-note { font-size: 0.79rem; color: var(--ink-soft); }
 .hp-field { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; overflow: hidden; }
 .btn[disabled] { opacity: 0.72; cursor: progress; }
-.recaptcha-slot { margin-top: 0.25rem; }
 
 /* ---------- Offer banner on forms ---------- */
 .offer-banner {

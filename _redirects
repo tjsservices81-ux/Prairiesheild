@@ -1,0 +1,4 @@
+# Cloudflare Pages redirects — retired URLs (preserve any existing indexing)
+/roofing-siding/          /                       301
+/porch-step-repair/       /porch-repair/          301
+/masonry-concrete-repair/ /masonry-restoration/   301

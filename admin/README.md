@@ -25,15 +25,15 @@ anywhere. Close the tab and it is gone.
 
 ## Why the last step is manual
 
-The site is static — Netlify serves files, there is no server behind it. A
+The site is static — Cloudflare Pages serves files, there is no server behind it. A
 browser cannot attach a file to an email on its own, and `mailto:` has no way
 to carry an attachment. So the email is written for you and the two PDFs are
 attached by hand. Two clicks.
 
-If that becomes a chore, it can be automated with a Netlify Function and an
+If that becomes a chore, it can be automated with a Cloudflare Pages Function and an
 email service (Resend, Postmark and SendGrid all have free tiers that cover
 this volume). That needs an account and an API key, and the key must live in
-Netlify's environment variables — never in the page, which is public. Ask and
+the Cloudflare project's environment variables — never in the page, which is public. Ask and
 I will wire it up.
 
 ## Securing it — do this before real customer details go in
@@ -45,9 +45,10 @@ template and should not be public.
 
 Options, best first:
 
-1. **Netlify password protection** — Site configuration → Access & security →
-   Visitor access. Site-wide or per-path. Requires a paid Netlify plan.
-2. **Netlify Identity + role gate** — free, more setup.
+1. **Cloudflare Access** — Zero Trust → Access → Applications → add a
+   self-hosted app for `prairieshieldwaterproofing.com/admin/*` and allow only
+   your email. Free for small teams; you sign in with a one-time code.
+2. **Pages Function with a password check** — free, more setup.
 3. **Run it locally instead** — the page is self-contained. Copy the `admin/`
    folder, `assets/css/admin.css`, `assets/js/admin.js` and
    `assets/vendor/jspdf-2.5.1.umd.min.js` to your own machine, open

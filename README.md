@@ -5,7 +5,7 @@ Static website for **Prairie Shield Waterproofing & Foundation Repair**, Chicago
 > *Professional Repairs. Lasting Results.*
 
 Plain HTML, CSS and vanilla JavaScript. No frameworks, no build step, no
-database. Designed for Netlify hosting with Netlify Forms.
+database. Hosted on Cloudflare Pages; forms are delivered by Formspree.
 
 **45 pages:** homepage, 21 masonry service pages, 9 foundation service pages,
 special offers, 7 service-area pages + hub, about, contact, privacy, thank-you
@@ -23,37 +23,31 @@ python3 -m http.server 8000
 Then open <http://localhost:8000>. A local server is recommended so clean URLs
 like `/tuckpointing/` resolve correctly.
 
-## How to deploy to Netlify
+## How to deploy to Cloudflare Pages
 
-1. **Create a GitHub repository** (or use this one).
-2. **Push the files** to the repository's main branch.
-3. **Connect the repository to Netlify**: *Add new site → Import an existing
-   project*, pick GitHub and select the repo.
-4. **Confirm the publish folder**: the publish directory is the repository root
-   (`.`) — already set in `netlify.toml`. Leave the build command empty.
-5. **Deploy.** Netlify publishes the site and automatically detects all 40 lead
-   forms.
-6. **Enable form notifications** in *Netlify → Forms → Form notifications* so
-   submissions reach your inbox.
-7. **Test the forms**: submit a test on the homepage and a service page, then
-   confirm the entries appear in *Netlify → Forms*.
+1. **Cloudflare dashboard → Workers & Pages → Create → Pages → Connect to Git**,
+   and pick this GitHub repository.
+2. **Build settings:** framework preset *None*, build command **empty**, build
+   output directory **`/`** (the repository root).
+3. **Deploy.** Every push to `main` redeploys automatically.
+4. **Custom domain:** in the Pages project → *Custom domains*, add
+   `prairieshieldwaterproofing.com` and `www.prairieshieldwaterproofing.com`.
 
-> **reCAPTCHA:** every form uses Netlify's built-in reCAPTCHA
-> (`data-netlify-recaptcha="true"`). Netlify injects Google's official widget
-> and branding at deploy time using its own keys — **no site key is needed and
-> the widget does not render on a local server**, only on the deployed site.
+Cloudflare reads two files from the root:
+
+- **`_redirects`** — 301s for retired URLs.
+- **`_headers`** — security headers and cache rules.
+
+Unknown paths get `404.html` automatically.
 
 ---
 
 ## Forms and emails
 
-The code side is complete and verified — 70 forms across 47 pages, all with
-correct Netlify markup. Three things remain in the Netlify dashboard plus one
-email address. See **`FORMS-SETUP.md`** for the exact steps.
-
-Short version: enable form detection and redeploy, point form notifications at
-a real inbox, and either set `SITE_RECAPTCHA_KEY` / `SITE_RECAPTCHA_SECRET` or
-run `./tools/recaptcha.sh off`.
+All 70 forms post to one Formspree form, `https://formspree.io/f/xdeegvgr`.
+Each submission includes a hidden `form-name` (for example
+`lead-chimney-repair`), so you can tell which page it came from. See
+**`FORMS-SETUP.md`**.
 
 ## ⚠️ Replace before launch
 
@@ -124,7 +118,7 @@ never go stale — replace with fixed dates if you prefer.
 
 ## Forms
 
-40 Netlify forms, each with honeypot (`bot-field`), reCAPTCHA, AJAX submission
+70 Formspree forms (40 names), each with honeypot (`_gotcha`), AJAX submission
 and a no-JS fallback that posts normally and redirects to `/thank-you/`:
 `lead-homepage`, `lead-contact`, `lead-special-offers`, `lead-<service-slug>`
 (30) and `lead-area-<area-slug>` (7).
@@ -153,7 +147,7 @@ and a no-JS fallback that posts normally and redirects to `/thank-you/`:
 │   ├── js/tracking.js              GA4 / Google Ads events
 │   └── images/                     Logos, offer art, placeholder photos
 ├── favicon.ico / favicon-*.png / apple-touch-icon.png / site.webmanifest
-├── sitemap.xml   robots.txt   netlify.toml
+├── sitemap.xml   robots.txt   _redirects   _headers
 ├── GOOGLE-ADS-GA4-SETUP.md
 └── IMAGE-CREDITS.md
 ```

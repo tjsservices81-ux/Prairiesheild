@@ -1,0 +1,27 @@
+# Cloudflare Pages headers — Prairie Shield Waterproofing & Foundation Repair
+# Cloudflare serves /404.html automatically for unknown paths.
+
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Everything under /assets/ is referenced from the HTML with a ?v=<hash> of
+# the file's own contents, so a long immutable cache is safe: replacing the
+# artwork changes the URL and the browser fetches it.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Root-level icons are referenced by bare filename from <link> tags and the
+# manifest, so they get no version stamp. Keep them revalidating daily.
+/favicon.ico
+  Cache-Control: public, max-age=86400, must-revalidate
+/favicon-16x16.png
+  Cache-Control: public, max-age=86400, must-revalidate
+/favicon-32x32.png
+  Cache-Control: public, max-age=86400, must-revalidate
+/apple-touch-icon.png
+  Cache-Control: public, max-age=86400, must-revalidate
+/site.webmanifest
+  Cache-Control: public, max-age=86400, must-revalidate
