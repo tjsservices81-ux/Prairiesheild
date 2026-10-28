@@ -1689,7 +1689,3 @@ h1, h2, h3, h4 { color: var(--navy-deep); }
       var(--navy-deep);
   }
 }
-
-/* Credit line under free-licence illustration photos */
-.photo-credit { margin: 0; padding: 0.45rem 0.9rem 0.55rem; font-size: 0.72rem; color: var(--ink-soft); text-align: right; }
-.photo-credit a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
