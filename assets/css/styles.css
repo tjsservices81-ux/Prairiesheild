@@ -1048,11 +1048,12 @@ h1, h2, h3, h4 { color: var(--navy-deep); }
 
 /* With Home added, the nav needs its own row until there is genuinely
    enough width for a single line. */
-@media (min-width: 72em) and (max-width: 87.99em) {
+@media (min-width: 72em) and (max-width: 99.99em) {
   .site-header--full .site-header__inner { flex-wrap: wrap; }
   .site-header--full .site-nav { order: 3; width: 100%; border-top: 1px solid var(--line); }
 }
-@media (min-width: 88em) {
+/* One-row header only once the full menu, phone and button fit (~1600px) */
+@media (min-width: 100em) {
   .site-header--full .site-header__inner { flex-wrap: nowrap; }
   .site-header--full .site-nav { order: 0; width: auto; border-top: 0; }
   .site-header--full .site-nav a,
@@ -1669,3 +1670,22 @@ h1, h2, h3, h4 { color: var(--navy-deep); }
   border-left: 4px solid var(--gold); display: grid; gap: 1rem; justify-items: start;
 }
 .article-cta p { margin: 0; color: var(--ink); }
+
+/* ---------- Home hero photo ----------
+   The crew photo sits at the top of the hero, darkened so the headline and
+   form stay readable, and fades into the plain hero colour further down. */
+.hero--home {
+  background:
+    linear-gradient(180deg, rgba(19, 19, 31, 0.55) 0, rgba(19, 19, 31, 0.78) 300px, var(--navy-deep) 640px),
+    url("/assets/images/photo-home-hero-sm.webp?v=51113deb") 62% 0 / auto 640px no-repeat,
+    var(--navy-deep);
+}
+@media (min-width: 48em) {
+  .hero--home {
+    background:
+      linear-gradient(90deg, rgba(19, 19, 31, 0.94) 0%, rgba(19, 19, 31, 0.84) 50%, rgba(19, 19, 31, 0.6) 100%),
+      linear-gradient(180deg, transparent 0, transparent 55%, var(--navy-deep) 100%) 0 0 / 100% min(56.25vw, 1080px) no-repeat,
+      url("/assets/images/photo-home-hero.webp?v=ad613569") 50% 0 / 100% auto no-repeat,
+      var(--navy-deep);
+  }
+}
