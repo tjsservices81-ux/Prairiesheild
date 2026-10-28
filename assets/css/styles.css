@@ -532,9 +532,9 @@ html.nav-open { overflow: hidden; }
 
 /* ---------- Reviews / testimonial slider ---------- */
 .review-card { position: relative; }
-.review-card__stars { color: var(--gold); letter-spacing: 0.18em; font-size: 1.05rem; margin-bottom: 0.6rem; }
+.review-card .review-card__stars { color: var(--gold); letter-spacing: 0.18em; font-size: 1.05rem; margin-bottom: 0.6rem; }
 .review-card__text { font-style: italic; color: var(--ink-soft); }
-.review-card__author { margin-top: 0.85rem; font-family: var(--font-heading); font-weight: 700; font-size: 0.88rem; color: var(--navy); }
+.review-card .review-card__author { margin-top: 0.85rem; font-family: var(--font-heading); font-weight: 700; font-size: 0.88rem; color: var(--navy); }
 .review-note { text-align: center; font-size: 0.85rem; color: var(--ink-soft); margin-top: 1.25rem; }
 .section--navy .review-note { color: #C3D3E6; }
 
