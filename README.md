@@ -42,6 +42,20 @@ Unknown paths get `404.html` automatically.
 
 ---
 
+## Generated pages
+
+The location pages (`/service-areas/…`), the five newer service pages
+(wet basement, crack injection, carbon fiber, wall anchors, window well
+drains) and the Learning Center are generated:
+
+```bash
+python3 tools/build_pages.py --check    # rebuild and report text overlap
+python3 tools/sitewide_links.py         # add new pages to menus, footers, forms
+```
+
+Edit the words in `tools/content_areas.py`, `tools/content_services.py` and
+`tools/content_articles.py`, then rebuild. `tools/` is never published.
+
 ## Forms and emails
 
 All 70 forms post to one Formspree form, `https://formspree.io/f/xdeegvgr`.
