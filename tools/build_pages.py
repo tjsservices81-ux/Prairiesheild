@@ -265,6 +265,8 @@ def main():
         tpl = f.read()
     built = [build(p, tpl) for p in all_pages()]
     print(f"built {len(built)} pages")
+    import stock_photos  # put the credited illustration photos back
+    stock_photos.apply()
     if "--check" in sys.argv:
         check(built)
 
