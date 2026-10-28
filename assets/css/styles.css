@@ -650,21 +650,27 @@ html.nav-open { overflow: hidden; }
 .mobile-bar__quote { background: var(--red); color: var(--white); }
 .mobile-bar__quote:hover { background: var(--red-dark); color: var(--white); }
 
-/* ---------- Reveal system (JS-added classes only) ---------- */
-.reveal, .reveal-left, .reveal-right, .reveal-scale {
-  opacity: 0; transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
-}
-.reveal, .reveal-left, .reveal-right { transform: translateY(18px); }
-.reveal-scale { transform: scale(0.96); }
-@supports (overflow-x: clip) {
-  .reveal-left { transform: translateX(-26px); }
-  .reveal-right { transform: translateX(26px); }
-}
+/* ---------- Reveal system (JS-added classes only) ----------
+   Keyframe animations, not transitions: cards and buttons set their own
+   `transition` for hover, which used to replace the reveal's and made
+   content snap in instead of fading. main.js removes the classes once the
+   animation ends, so hover effects are untouched afterwards. */
+.reveal, .reveal-left, .reveal-right, .reveal-scale { opacity: 0; }
 .reveal.is-visible, .reveal-left.is-visible, .reveal-right.is-visible, .reveal-scale.is-visible {
-  opacity: 1; transform: none;
+  animation: reveal-up 0.7s var(--ease) var(--reveal-delay, 0ms) both;
+  will-change: opacity, transform;
 }
+.reveal-scale.is-visible { animation-name: reveal-scale; }
+@supports (overflow-x: clip) {
+  .reveal-left.is-visible { animation-name: reveal-left; }
+  .reveal-right.is-visible { animation-name: reveal-right; }
+}
+@keyframes reveal-up { from { opacity: 0; transform: translate3d(0, 18px, 0); } to { opacity: 1; transform: none; } }
+@keyframes reveal-left { from { opacity: 0; transform: translate3d(-26px, 0, 0); } to { opacity: 1; transform: none; } }
+@keyframes reveal-right { from { opacity: 0; transform: translate3d(26px, 0, 0); } to { opacity: 1; transform: none; } }
+@keyframes reveal-scale { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) {
-  .reveal, .reveal-left, .reveal-right, .reveal-scale { opacity: 1; transform: none; transition: none; }
+  .reveal, .reveal-left, .reveal-right, .reveal-scale { opacity: 1; animation: none; }
 }
 
 /* Loading shimmer for images */

@@ -104,9 +104,16 @@
     var CLASS_MAP = { left: 'reveal-left', right: 'reveal-right', scale: 'reveal-scale' };
     var pending = [];
 
-    function show(el) {
-      var delay = parseInt(el.getAttribute('data-anim-delay') || '0', 10);
-      window.setTimeout(function () { el.classList.add('is-visible'); }, delay);
+    function show(el) { el.classList.add('is-visible'); }
+
+    // Once an element has finished revealing, drop the reveal classes so its
+    // own hover transitions apply again and nothing is left composited.
+    function settle(e) {
+      var el = e.currentTarget;
+      if (e.target !== el || e.animationName.indexOf('reveal') !== 0) { return; }
+      el.classList.remove('reveal', 'reveal-left', 'reveal-right', 'reveal-scale', 'is-visible');
+      el.style.removeProperty('--reveal-delay');
+      el.removeEventListener('animationend', settle);
     }
 
     var observer = new IntersectionObserver(function (entries) {
@@ -132,8 +139,9 @@
       var group = el.parentElement;
       if (group && group.classList.contains('stagger-group')) {
         var idx = Array.prototype.indexOf.call(group.children, el);
-        el.setAttribute('data-anim-delay', String(Math.min(idx % 8, 5) * 85));
+        el.style.setProperty('--reveal-delay', (Math.min(idx % 8, 5) * 85) + 'ms');
       }
+      el.addEventListener('animationend', settle);
       pending.push(el);
       // Observe the slider track rather than each card inside it
       var track = el.parentElement && el.parentElement.classList.contains('slider__track')
@@ -147,7 +155,8 @@
     function sweep() {
       var remaining = false;
       pending.forEach(function (el) {
-        if (el.classList.contains('is-visible')) { return; }
+        // Already revealing, or finished and settled
+        if (el.classList.contains('is-visible') || !el.matches('.reveal, .reveal-left, .reveal-right, .reveal-scale')) { return; }
         var r = el.getBoundingClientRect();
         if (r.top < window.innerHeight) { el.classList.add('is-visible'); }
         else { remaining = true; }
