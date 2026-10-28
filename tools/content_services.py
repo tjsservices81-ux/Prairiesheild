@@ -28,7 +28,7 @@ SERVICES = [
         desc="Wet or leaking basement in Chicagoland? We find where the water gets in — cracks, floor joint, sewer backup or high water table — and fix the cause. Free inspection, 24/7.",
         h1="Wet Basement Repair in Chicago &amp; the Suburbs",
         lead="Puddles after rain, a damp smell, wet carpet along one wall — a wet basement always has a cause. We find it, explain it and fix it properly.",
-        photo=("photo-basement-waterproofing.webp", "Exterior foundation waterproofing membrane on a Chicago home", 1100, 1467),
+        photo=("photo-wet-basement-repair.webp", "Water seeping in where a basement wall meets the floor", 1200, 901),
         explainer_h="Where the Water Is Really Coming From",
         explainer=[
             "Water gets into basements in a handful of ways, and the fix depends entirely on which one you have. Through a crack in the wall. Through the joint where the wall meets the floor, pushed up by groundwater. Through the wall itself, if it is old block or stone. Back up through a floor drain when the sewer is overloaded. Or down through a window well that has filled like a bucket.",
@@ -63,7 +63,7 @@ SERVICES = [
         desc="Leaking foundation crack? Epoxy and polyurethane crack injection seals poured-concrete cracks through the full wall thickness, from inside. Chicagoland, free estimates.",
         h1="Epoxy &amp; Polyurethane Crack Injection",
         lead="A leaking crack in a poured concrete wall is one of the most common — and most fixable — basement problems. Injection seals it through the whole wall, from inside.",
-        photo=("photo-foundation-crack-repair.webp", "Cracked foundation wall in a Chicago home before repair", 640, 480),
+        photo=("photo-crack-injection.webp", "Injection ports set along a sealed crack in a poured basement wall", 900, 1200),
         explainer_h="How Crack Injection Works",
         explainer=[
             "Most poured concrete walls crack as they cure and shrink. Those cracks are rarely structural, but they run right through the wall, and once groundwater finds them they leak.",
@@ -98,7 +98,7 @@ SERVICES = [
         desc="Carbon fiber straps stop bowing basement walls from moving further, with minimal disruption. For block and poured walls with early bowing in Chicagoland. Free inspection.",
         h1="Carbon Fiber Wall Reinforcement",
         lead="When a basement wall has started to bow, carbon fiber straps lock it in place — strong, slim and installed from inside in a day.",
-        photo=("photo-bowed-wall-repair.webp", "Basement wall with a horizontal crack from soil pressure", 480, 640),
+        photo=("photo-carbon-fiber-wall-straps.webp", "Carbon fiber straps installed on a basement wall by Prairie Shield", 1125, 1200),
         explainer_h="Stopping a Bowing Wall Without Rebuilding It",
         explainer=[
             "Wet clay soil expands and presses on basement walls. Over years that pressure can push a wall inward, showing first as a horizontal crack in a poured wall or a stair-step crack in block.",
@@ -131,7 +131,7 @@ SERVICES = [
         desc="Steel wall anchors hold bowing basement walls and can gradually straighten them; I-beam bracing for severe movement. Chicagoland foundation repair, free inspection.",
         h1="Steel Wall Anchors &amp; I-Beam Bracing",
         lead="For basement walls that have moved more than straps can handle, steel wall anchors hold the wall and can gradually pull it back toward straight.",
-        photo=("photo-foundation-repair.webp", "Foundation repair work underway on a Chicago home", 800, 600),
+        photo=("photo-wall-anchors.webp", "Steel I-beam braces installed along a basement wall by Prairie Shield", 1024, 576),
         explainer_h="Holding — and Recovering — a Bowed Wall",
         explainer=[
             "A wall anchor system has three parts: a steel plate on the inside of the wall, a steel earth anchor set in stable soil out in the yard, and a steel rod connecting the two through the wall. Tightening the rod holds the wall against the soil pressure pushing it in.",
@@ -166,7 +166,7 @@ SERVICES = [
         desc="Basement window leaking when it rains? A window well with no working drain fills with water. We install and repair window well drains tied into your drain tile. Chicagoland.",
         h1="Window Well Drain Repair &amp; Installation",
         lead="If water pours in around a basement window during storms, the window well is usually filling up with nowhere to drain. That is a straightforward fix.",
-        photo=("photo-french-drain-drain-tile.webp", "Drain pipe installed in a trench beside a home", 1100, 619),
+        photo=("photo-window-well-drains.webp", "Window well with a new drain and gravel base installed by Prairie Shield", 948, 1200),
         explainer_h="Why Window Wells Flood",
         explainer=[
             "A window well is a small pit dug against the foundation so a basement window can sit below ground. It should have gravel at the bottom and a drain that carries water down to the foundation drain tile. Over time that drain clogs with silt and leaves, or it was never connected in the first place.",

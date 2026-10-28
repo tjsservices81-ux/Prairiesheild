@@ -1,30 +1,44 @@
 # Photos still needed
 
-Updated after the first batch of 36 uploads.
-
-**Target is now one before/after pair per service, not three.** Three was
-unrealistic — 90 pairs — and it looked worse in practice: a page with one
-real project sat beside two "awaiting real photos" cards. Pages now show
-however many real pairs exist. One pair gets the full width and reads
-strongly on its own. A service can still grow to two or three later; extras
-are used automatically, they are just not counted as missing.
-
-That drops the job from **212 photos to 92**.
+Updated after the second batch (108 photos, sorted into folders by service).
 
 | | Done | Needed |
 |---|---|---|
-| Service photos | 15 | 29 |
-| Before/after pairs | 4 | 29 |
-| Homepage hero | 0 | 1 |
-| Team photo | 0 | 1 |
+| Service photos | 30 | 31 |
+| Services with a before/after pair | 25 | 29 |
 
-**Total outstanding: 14 service photos, 25 pairs, hero, team.**
+**Still missing a main service photo:** Masonry Sealing, Commercial Masonry.
 
-**Helical & Push Piers** now has a service photo from the old website (no before/after section).
+**Still missing a before/after pair:** Brick Replacement, Mortar Joint Repair,
+Masonry Sealing, Commercial Masonry.
+
+### Not used from the second batch
+
+Eight uploads are not Prairie Shield photos. They are published on Wikimedia
+Commons by another company (A-Above Tuckpointing, Crete IL) and were left
+off the site:
+
+- `12-brick-half-cleaned/` — both photos
+- `23-mortar-joint-repair/after.jpg` and `before-after-same-wall.jpg`
+- `24-brick-replacement/` — all three photos
+- `31-masonry-cleaning/before-after-same-wall.jpg`
+- `32-masonry-sealing/sealed-brick-wall.jpg` (also an Andrew Lin Flickr photo)
+
+Real photos for those four services are still needed.
+
+Duplicates and extra shots not placed: `01/old-pump-in-pit.jpg`,
+`02/flooded-basement-3.jpg`, `06/water-stains-at-wall.jpg`,
+`09/wall-anchor-plates-brick-wall.jpg`, and the mortar joint shots
+`before-closeup.jpg`, `before-side-wall.jpg`, `during.jpg` (no matching after).
+
+Before publishing, the house number on the Lakeview limestone steps and the
+family-name sign on the concrete walkway were blurred.
 
 ---
 
-## 1. The two that matter most
+## Earlier notes (first batch)
+
+### 1. The two that matter most
 
 Neither exists yet, and both are more visible than any service page.
 
