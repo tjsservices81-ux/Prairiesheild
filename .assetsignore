@@ -1,0 +1,11 @@
+# Files Cloudflare must not publish (repo internals, raw photo uploads, docs)
+.git
+.gitignore
+.assetsignore
+.wrangler
+node_modules
+wrangler.jsonc
+photo-source
+brand-source
+tools
+*.md
