@@ -8,4 +8,5 @@ wrangler.jsonc
 photo-source
 brand-source
 tools
+src
 *.md
