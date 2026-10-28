@@ -24,10 +24,10 @@ Nothing else needs adding in Formspree, so there's no form per page to set up.
    the form is used. Until you click it, submissions are held.
 2. **Check the notification address** under the form's *Settings* and send
    them to the inbox you actually read.
-3. **Spam:** the forms include Formspree's `_gotcha` honeypot field, and
-   Formspree filters spam on its own. If spam gets through, turn on reCAPTCHA
-   or Formspree's spam protection under the form's settings. You don't need
-   to change the site for that.
+3. **Spam:** the site has no spam trap. The owner asked that no lead ever be
+   filtered, so the `_gotcha` honeypot was removed. Turn off spam filtering
+   and reCAPTCHA in the form's settings, and check Formspree's *Spam* tab now
+   and then in case anything was still flagged.
 4. **Allowed domains (recommended):** restrict the form to
    `prairieshieldwaterproofing.com` so other sites can't post to it.
 

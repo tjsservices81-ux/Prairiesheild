@@ -118,7 +118,7 @@ never go stale — replace with fixed dates if you prefer.
 
 ## Forms
 
-70 Formspree forms (40 names), each with honeypot (`_gotcha`), AJAX submission
+70 Formspree forms (40 names), each with AJAX submission
 and a no-JS fallback that posts normally and redirects to `/thank-you/`:
 `lead-homepage`, `lead-contact`, `lead-special-offers`, `lead-<service-slug>`
 (30) and `lead-area-<area-slug>` (7).
