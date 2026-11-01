@@ -24,8 +24,8 @@ def related(exclude):
 SERVICES = [
     dict(
         slug="wet-basement-repair", name="Wet Basement Repair", option="Wet Basement Repair",
-        title="Wet Basement Repair Chicago | Leaks, Seepage &amp; Damp | Prairie Shield",
-        desc="Wet or leaking basement in Chicagoland? We find where the water gets in — cracks, floor joint, sewer backup or high water table — and fix the cause. Free inspection, 24/7.",
+        title="Wet Basement Repair Chicago | Prairie Shield",
+        desc="Wet or leaking basement in Chicagoland? We find where the water gets in — cracks, floor joint, sewer backup or water table — and fix the cause.",
         h1="Wet Basement Repair in Chicago &amp; the Suburbs",
         lead="Puddles after rain, a damp smell, wet carpet along one wall — a wet basement always has a cause. We find it, explain it and fix it properly.",
         photo=("photo-wet-basement-repair.webp", "Water seeping in where a basement wall meets the floor", 1200, 901),
@@ -59,8 +59,8 @@ SERVICES = [
     ),
     dict(
         slug="crack-injection", name="Crack Injection", option="Crack Injection",
-        title="Foundation Crack Injection Chicago | Epoxy &amp; Polyurethane | Prairie Shield",
-        desc="Leaking foundation crack? Epoxy and polyurethane crack injection seals poured-concrete cracks through the full wall thickness, from inside. Chicagoland, free estimates.",
+        title="Foundation Crack Injection Chicago | Prairie Shield",
+        desc="Leaking foundation crack? Epoxy and polyurethane injection seals poured-concrete cracks through the full wall, from inside. Chicagoland, free estimates.",
         h1="Epoxy &amp; Polyurethane Crack Injection",
         lead="A leaking crack in a poured concrete wall is one of the most common — and most fixable — basement problems. Injection seals it through the whole wall, from inside.",
         photo=("photo-crack-injection.webp", "Injection ports set along a sealed crack in a poured basement wall", 900, 1200),
@@ -94,8 +94,8 @@ SERVICES = [
     ),
     dict(
         slug="carbon-fiber-wall-straps", name="Carbon Fiber Wall Straps", option="Carbon Fiber Wall Straps",
-        title="Carbon Fiber Wall Straps Chicago | Bowing Wall Repair | Prairie Shield",
-        desc="Carbon fiber straps stop bowing basement walls from moving further, with minimal disruption. For block and poured walls with early bowing in Chicagoland. Free inspection.",
+        title="Carbon Fiber Wall Straps Chicago | Prairie Shield",
+        desc="Carbon fiber straps stop bowing basement walls from moving further, installed from inside with minimal disruption. Chicagoland, free inspection.",
         h1="Carbon Fiber Wall Reinforcement",
         lead="When a basement wall has started to bow, carbon fiber straps lock it in place — strong, slim and installed from inside in a day.",
         photo=("photo-carbon-fiber-wall-straps.webp", "Carbon fiber straps installed on a basement wall by Prairie Shield", 1125, 1200),
@@ -128,7 +128,7 @@ SERVICES = [
     dict(
         slug="wall-anchors", name="Wall Anchors &amp; Bracing", option="Wall Anchors &amp; Bracing",
         title="Basement Wall Anchors &amp; I-Beam Bracing Chicago | Prairie Shield",
-        desc="Steel wall anchors hold bowing basement walls and can gradually straighten them; I-beam bracing for severe movement. Chicagoland foundation repair, free inspection.",
+        desc="Steel wall anchors hold bowing basement walls and can gradually straighten them; I-beam bracing for severe movement. Chicagoland, free inspection.",
         h1="Steel Wall Anchors &amp; I-Beam Bracing",
         lead="For basement walls that have moved more than straps can handle, steel wall anchors hold the wall and can gradually pull it back toward straight.",
         photo=("photo-wall-anchors.webp", "Steel I-beam braces installed along a basement wall by Prairie Shield", 1024, 576),
@@ -162,8 +162,8 @@ SERVICES = [
     ),
     dict(
         slug="window-well-drains", name="Window Well Drains", option="Window Well Drains",
-        title="Window Well Drains &amp; Leaking Basement Windows Chicago | Prairie Shield",
-        desc="Basement window leaking when it rains? A window well with no working drain fills with water. We install and repair window well drains tied into your drain tile. Chicagoland.",
+        title="Window Well Drains Chicago | Prairie Shield",
+        desc="Basement window leaking when it rains? A window well without a working drain fills with water. We install and repair window well drains.",
         h1="Window Well Drain Repair &amp; Installation",
         lead="If water pours in around a basement window during storms, the window well is usually filling up with nowhere to drain. That is a straightforward fix.",
         photo=("photo-window-well-drains.webp", "Window well with a new drain and gravel base installed by Prairie Shield", 948, 1200),

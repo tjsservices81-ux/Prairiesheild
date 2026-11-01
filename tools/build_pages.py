@@ -222,7 +222,7 @@ def build(page, tpl):
     s = re.sub(r"<h1>.*?</h1>", lambda mm: f"<h1>{page['h1']}</h1>", s, count=1)
     s = re.sub(r'(<h1>.*?</h1>\s*<p class="hero__lead">).*?(</p>)', lambda mm: mm.group(1) + page["lead"] + mm.group(2),
                s, count=1, flags=re.S)
-    s = s.replace("<h3>Free Estimate in Cook County</h3>", f"<h3>{page['form_heading']}</h3>", 1)
+    s = s.replace("<h2>Free Estimate in Cook County</h2>", f"<h2>{page['form_heading']}</h2>", 1)
     s = s.replace(TPL_FORM, page["form"])
     s = s.replace('<input type="hidden" name="page-service" value="General Inquiry">',
                   f'<input type="hidden" name="page-service" value="{esc(page["service"])}">', 1)

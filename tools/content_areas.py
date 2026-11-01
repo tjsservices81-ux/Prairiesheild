@@ -17,8 +17,8 @@ def town_url(slug):
 COUNTIES = [
     dict(
         slug="chicago", name="Chicago", kind="city",
-        title="Chicago Basement Waterproofing &amp; Foundation Repair | Prairie Shield",
-        desc="Basement waterproofing, foundation repair and masonry for Chicago bungalows, two-flats and greystones. Sewer backup, leaking walls, cracked foundations. Free estimates, 24/7.",
+        title="Chicago Basement Waterproofing &amp; Foundation Repair",
+        desc="Basement waterproofing, foundation repair and masonry for Chicago bungalows, two-flats and greystones. Sewer backup, leaks, cracks. Free estimates, 24/7.",
         h1="Basement Waterproofing &amp; Foundation Repair in Chicago",
         lead="Bungalows, two-flats, greystones and workers&rsquo; cottages — Chicago&rsquo;s housing is old, mostly masonry and built over clay. That mix is exactly why basements here take on water.",
         intro_h="Why Chicago Basements Leak",
@@ -49,8 +49,8 @@ COUNTIES = [
     ),
     dict(
         slug="cook-county", name="Cook County", kind="county",
-        title="Cook County Basement Waterproofing &amp; Foundation Repair | Prairie Shield",
-        desc="Basement waterproofing, foundation repair and masonry across suburban Cook County — Evanston, Oak Park, Skokie, Des Plaines, Schaumburg, Orland Park. Free estimates, 24/7 response.",
+        title="Cook County Basement Waterproofing &amp; Foundation Repair",
+        desc="Basement waterproofing, foundation repair and masonry across suburban Cook County, from Evanston and Oak Park to Schaumburg and Orland Park. Free estimates.",
         h1="Basement Waterproofing &amp; Foundation Repair in Cook County",
         lead="From the lakefront suburbs to the northwest and south suburbs, Cook County covers more than a century of construction — and every era of basement has its own way of letting water in.",
         intro_h="One County, Every Kind of Foundation",
@@ -82,8 +82,8 @@ COUNTIES = [
     ),
     dict(
         slug="dupage-county", name="DuPage County", kind="county",
-        title="DuPage County Basement Waterproofing &amp; Foundation Repair | Prairie Shield",
-        desc="Basement waterproofing, sump pumps and foundation repair in DuPage County — Naperville, Wheaton, Elmhurst, Downers Grove and nearby. Free estimates, 24/7 emergency service.",
+        title="DuPage County Basement Waterproofing &amp; Foundation Repair",
+        desc="Basement waterproofing, sump pumps and foundation repair in DuPage County: Naperville, Wheaton, Elmhurst, Downers Grove and nearby. Free estimates.",
         h1="Basement Waterproofing &amp; Foundation Repair in DuPage County",
         lead="DuPage grew fast after the 1950s, so most basements here are poured concrete or block on heavy clay — dependable for decades, until the cracks and the sump pump start to give out.",
         intro_h="What DuPage Basements Have in Common",
@@ -115,8 +115,8 @@ COUNTIES = [
     ),
     dict(
         slug="lake-county", name="Lake County", kind="county",
-        title="Lake County IL Basement Waterproofing &amp; Foundation Repair | Prairie Shield",
-        desc="Basement waterproofing, foundation repair and masonry in Lake County, Illinois — Waukegan, Highland Park, Libertyville, Mundelein and the Chain O&rsquo;Lakes. Free estimates.",
+        title="Lake County IL Basement Waterproofing &amp; Foundation Repair",
+        desc="Basement waterproofing, foundation repair and masonry in Lake County, IL: Waukegan, Highland Park, Libertyville and the Chain O’Lakes. Free estimates.",
         h1="Basement Waterproofing &amp; Foundation Repair in Lake County",
         lead="Lake Michigan bluffs on one side, the Des Plaines River and the Chain O&rsquo;Lakes on the other — Lake County has more water around its homes than almost anywhere in Chicagoland.",
         intro_h="Water Is Never Far Away in Lake County",
@@ -148,8 +148,8 @@ COUNTIES = [
     ),
     dict(
         slug="will-county", name="Will County", kind="county",
-        title="Will County Basement Waterproofing &amp; Foundation Repair | Prairie Shield",
-        desc="Basement waterproofing, sump pumps and foundation repair in Will County — Joliet, Plainfield, Bolingbrook, New Lenox and Naperville&rsquo;s south side. Free estimates, 24/7.",
+        title="Will County Basement Waterproofing &amp; Foundation Repair",
+        desc="Basement waterproofing, sump pumps and foundation repair in Will County: Joliet, Plainfield, Bolingbrook, New Lenox and south Naperville. Free estimates.",
         h1="Basement Waterproofing &amp; Foundation Repair in Will County",
         lead="Historic Joliet and some of the fastest-built subdivisions in the region share one county — and two very different sets of basement problems.",
         intro_h="Old Joliet, New Subdivisions",
@@ -180,8 +180,8 @@ COUNTIES = [
     ),
     dict(
         slug="kane-county", name="Kane County", kind="county",
-        title="Kane County Basement Waterproofing &amp; Foundation Repair | Prairie Shield",
-        desc="Basement waterproofing, foundation repair and masonry along the Fox River — Aurora, Elgin, St. Charles, Geneva and Batavia. Free estimates and 24/7 emergency service.",
+        title="Kane County Basement Waterproofing &amp; Foundation Repair",
+        desc="Basement waterproofing, foundation repair and masonry along the Fox River: Aurora, Elgin, St. Charles, Geneva and Batavia. Free estimates, 24/7.",
         h1="Basement Waterproofing &amp; Foundation Repair in Kane County",
         lead="The Fox River runs straight through Kane County&rsquo;s biggest towns, and the historic homes along it have the stone foundations and river-valley water to prove it.",
         intro_h="Life Along the Fox River",
@@ -212,8 +212,8 @@ COUNTIES = [
     ),
     dict(
         slug="mchenry-county", name="McHenry County", kind="county",
-        title="McHenry County Basement Waterproofing &amp; Foundation Repair | Prairie Shield",
-        desc="Basement waterproofing, crawl space and foundation repair in McHenry County — Crystal Lake, McHenry, Woodstock, Algonquin and Cary. Free estimates, 24/7 emergency help.",
+        title="McHenry County Basement Waterproofing &amp; Foundation Repair",
+        desc="Basement waterproofing, crawl space and foundation repair in McHenry County: Crystal Lake, McHenry, Woodstock, Algonquin and Cary. Free estimates.",
         h1="Basement Waterproofing &amp; Foundation Repair in McHenry County",
         lead="Lakes, rivers, farmland and growing towns — McHenry County homes deal with high water tables and long, hard winters, often a long way from the nearest contractor.",
         intro_h="High Water Tables and Hard Winters",
@@ -543,9 +543,9 @@ def town_page(t):
     county = COUNTY_NAMES[t["county"]]
     return dict(
         path=town_url(t["slug"]),
-        title=f"{place} Basement Waterproofing &amp; Foundation Repair | Prairie Shield",
+        title=f"{place} Basement Waterproofing &amp; Foundation Repair",
         desc=(f"Basement waterproofing, foundation crack repair, sump pumps and masonry in {place}, IL. "
-              "Local crews, free estimates and 24/7 emergency service from Prairie Shield."),
+              "Free estimates and 24/7 emergency service."),
         h1=f"Basement Waterproofing &amp; Foundation Repair in {place}, IL",
         lead=t["lead"], tagline=f"Serving {place} &middot; {t['county_name']}",
         crumbs=[("Service Areas", AREAS), (county, f"{AREAS}{t['county']}/"), (place, town_url(t["slug"]))],

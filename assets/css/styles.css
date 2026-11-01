@@ -3,6 +3,17 @@
    Mobile-first. Premium contractor brand system.
    ============================================================ */
 
+/* Size-matched stand-ins shown until the web fonts load, so text keeps the
+   same line breaks and the page does not jump when they swap in. */
+@font-face {
+  font-family: "Montserrat Fallback"; src: local("Arial");
+  ascent-override: 84.95%; descent-override: 22.03%; line-gap-override: 0%; size-adjust: 113.95%;
+}
+@font-face {
+  font-family: "Inter Fallback"; src: local("Arial");
+  ascent-override: 90.49%; descent-override: 22.56%; line-gap-override: 0%; size-adjust: 107.06%;
+}
+
 :root {
   /* Brand */
   --navy: #1A1A2E;
@@ -26,8 +37,8 @@
   --success: #167A45;
   --error: #B42318;
 
-  --font-heading: "Montserrat", "Helvetica Neue", Arial, sans-serif;
-  --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-heading: "Montserrat", "Montserrat Fallback", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Inter", "Inter Fallback", "Helvetica Neue", Arial, sans-serif;
 
   --radius: 12px;
   --radius-lg: 18px;

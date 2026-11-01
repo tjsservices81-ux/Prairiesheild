@@ -2,6 +2,13 @@
 before they call a contractor. Plain, accurate, no invented statistics."""
 from build_pages import article_cards_section, links_section
 
+import html as _html
+
+
+def html_text(s):
+    return _html.unescape(s)
+
+
 HUB = "/learning-center/"
 PUBLISHED = "2026-10-28"
 BIZ = {"@id": "https://www.prairieshieldwaterproofing.com/#business"}
@@ -11,7 +18,7 @@ ARTICLES = [
         slug="why-is-my-basement-wet-after-rain",
         title="Why Is My Basement Wet After It Rains? 7 Common Causes",
         short="Why Is My Basement Wet After Rain?",
-        desc="Seven reasons Chicago-area basements take on water after rain — from cracks and the cove joint to sewer backup and window wells — and how to tell which one you have.",
+        desc="Seven reasons basements take on water after rain, from cracks and the cove joint to sewer backup and window wells, and how to tell which one you have.",
         summary="Seven ways water gets into a basement after a storm, and how to tell which one is yours.",
         sections=[
             (None, ["If your basement only gets wet when it rains, that is useful information. It means the water is coming from outside, driven by the storm, rather than from a plumbing leak or condensation. The next step is working out <em>how</em> it is getting in, because each route has a different fix."]),
@@ -32,7 +39,7 @@ ARTICLES = [
         slug="interior-vs-exterior-waterproofing",
         title="Interior vs Exterior Basement Waterproofing: Which Do You Need?",
         short="Interior vs Exterior Waterproofing",
-        desc="How interior drain tile and exterior waterproofing differ, what each costs in disruption, and which suits Chicago basements, finished basements and older foundations.",
+        desc="How interior drain tile and exterior waterproofing differ, how disruptive each is, and which suits Chicago, finished and older basements.",
         summary="How the two main approaches work, and why most Chicago homes are waterproofed from inside.",
         sections=[
             (None, ["There are two broad ways to keep water out of a basement: stop it at the outside face of the wall, or let it reach the wall and manage it inside. Both work. Which one is right depends on your house, your lot and what is actually causing the water."]),
@@ -108,7 +115,7 @@ def article_body(a):
 def article_page(a):
     path = f"{HUB}{a['slug']}/"
     return dict(
-        path=path, title=f"{a['title']} | Prairie Shield", desc=a["desc"], h1=a["title"], lead=a["summary"],
+        path=path, title=a["title"] if len(html_text(a["title"])) > 48 else f"{a['title']} | Prairie Shield", desc=a["desc"], h1=a["title"], lead=a["summary"],
         tagline="Learning Center", og_type="article",
         crumbs=[("Learning Center", HUB), (a["short"], path)],
         form=f"lead-article-{a['slug']}", form_heading="Ask Us About Your Basement", service="Learning Center",
