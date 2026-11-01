@@ -974,9 +974,11 @@ html.nav-open { overflow: hidden; }
   height: 2.5rem; width: auto;
   filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.35));
 }
+/* Five identical rows; moving one row (20%) loops seamlessly and keeps
+   four rows on screen, so even 2560px screens never see a gap. */
 @keyframes badge-scroll {
   from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  to { transform: translateX(-20%); }
 }
 @media (prefers-reduced-motion: reduce) {
   .badge-strip__track { animation: none; }
