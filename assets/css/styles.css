@@ -3,6 +3,19 @@
    Mobile-first. Premium contractor brand system.
    ============================================================ */
 
+/* Brand fonts, self-hosted and preloaded from every page's <head> so they
+   are ready before first paint (no reflow when they arrive). */
+@font-face {
+  font-family: "Inter"; font-style: normal; font-weight: 400 600; font-display: swap;
+  src: url("/assets/fonts/inter-latin.woff2?v=260c81a4") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Montserrat"; font-style: normal; font-weight: 700 800; font-display: swap;
+  src: url("/assets/fonts/montserrat-latin.woff2?v=311d352d") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 /* Size-matched stand-ins shown until the web fonts load, so text keeps the
    same line breaks and the page does not jump when they swap in. */
 @font-face {
