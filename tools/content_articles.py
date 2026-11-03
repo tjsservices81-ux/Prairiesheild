@@ -90,6 +90,47 @@ ARTICLES = [
         faqs=[("How long does a sump pump last?", "Often around seven to ten years, less if it runs a lot. Age is a good reason to replace before it fails."),
               ("Do I need a backup if I have never flooded?", "If your basement relies on a sump, yes. Most floods happen the first time the main pump fails or the power goes out.")],
     ),
+    dict(
+        slug="foundation-repair-chicago",
+        title="Foundation Repair in Chicago: Protect Your Home From Structural Damage",
+        short="Foundation Repair in Chicago",
+        desc="What causes foundation problems in Chicago, the warning signs to watch for, the main repair methods and how to prevent future damage.",
+        summary="Causes, warning signs and repair options for Chicago homes with foundation problems.",
+        image=("/assets/images/photo-foundation-repair.webp", "Foundation repair work on a Chicago-area home"),
+        sections=[
+            (None, ["A strong foundation is essential to keeping your home safe, stable, and structurally sound. Over time, shifting soil, excess moisture, and changing weather conditions can weaken the support beneath your property. Professional <strong><a href=\"/foundation-repair/\">foundation repair</a></strong> helps address these problems before they develop into costly structural damage.",
+                    "For homeowners in Chicago and surrounding communities, understanding the early warning signs of foundation problems can make a significant difference in protecting their investment."]),
+            ("What Causes Foundation Problems?", ["Foundation damage often develops gradually due to environmental conditions and changes in the surrounding soil.",
+                                                  "Chicago&rsquo;s clay-rich soil can expand when exposed to moisture and contract during dry periods. This movement places pressure on foundation walls and may contribute to uneven settlement.",
+                                                  "Other common causes include poor drainage, excessive groundwater, soil erosion, and repeated freezing and thawing during winter.",
+                                                  "Without proper attention, these conditions can lead to foundation cracks, shifting walls, and structural instability."]),
+            ("Warning Signs Your Home May Need Foundation Repair", ["Recognizing foundation problems early allows homeowners to explore repair options before damage becomes more extensive.",
+                                                          "Common warning signs include:",
+                                                          "<ul><li>Cracks appearing in foundation walls or exterior brickwork.</li><li>Uneven or sloping floors throughout the home.</li><li>Doors and windows that suddenly become difficult to open.</li><li>Gaps forming between walls, ceilings, or window frames.</li><li>Basement walls that appear to bow or lean inward.</li><li>Water entering through foundation cracks.</li></ul>",
+                                                          "Not every crack indicates serious structural damage. However, widening cracks, visible wall movement, or multiple warning signs should be evaluated by a qualified professional."]),
+            ("Professional Foundation Repair Solutions", ["The appropriate <strong>foundation repair</strong> method depends on the type of damage, soil conditions, and underlying structural issues.",
+                                                          "<h3>Foundation Crack Repair</h3>",
+                                                          "Sealing suitable <a href=\"/foundation-crack-repair/\">foundation cracks</a> can help prevent water intrusion and protect concrete walls from additional moisture-related deterioration. Structural cracks may require reinforcement or other corrective measures.",
+                                                          "<h3>Bowing Wall Reinforcement</h3>",
+                                                          "<a href=\"/carbon-fiber-wall-straps/\">Carbon fiber straps</a>, <a href=\"/wall-anchors/\">wall anchors</a>, and structural bracing systems may be used to stabilize basement walls affected by lateral soil pressure.",
+                                                          "<h3>Helical and Push Pier Installation</h3>",
+                                                          "When foundation settlement occurs, engineered <a href=\"/helical-push-piers/\">pier systems</a> can transfer structural loads to deeper, more stable soil or bearing layers, helping stabilize the building.",
+                                                          "<h3>Drainage and Waterproofing Improvements</h3>",
+                                                          "<a href=\"/french-drain-drain-tile/\">French drains</a>, <a href=\"/sump-pump-installation/\">sump pumps</a>, and other drainage solutions can help manage groundwater and reduce moisture-related pressure around the foundation."]),
+            ("Why Foundation Repair Matters in Chicago", ["Homes throughout Chicago, Cook County, DuPage County, Lake County, and nearby communities experience seasonal weather conditions that can affect soil stability.",
+                                                         "Heavy rainfall, changing groundwater levels, and freezing temperatures create challenges for foundations, particularly when drainage systems are inadequate.",
+                                                         "Addressing foundation issues promptly helps maintain structural stability, reduce the risk of recurring damage, and protect the long-term condition of your property."]),
+            ("How to Prevent Future Foundation Problems", ["Although some foundation movement cannot be avoided, regular maintenance can help reduce preventable damage.",
+                                                          "<ul><li>Keep gutters clear of leaves and debris.</li><li>Direct downspouts away from the foundation.</li><li>Maintain proper grading around the property.</li><li>Inspect basement walls for new cracks or moisture.</li><li>Address drainage problems before they worsen.</li></ul>",
+                                                          "If you notice structural changes, arrange a professional inspection rather than relying solely on cosmetic repairs."]),
+            ("Schedule a Professional Foundation Inspection", ["Foundation problems should never be ignored, especially when cracks, uneven floors, or shifting walls become more noticeable.",
+                                                              "Professional <strong>foundation repair in Chicago</strong> begins with identifying the underlying cause and selecting a solution suited to your property&rsquo;s structural needs.",
+                                                              "Protect your home with a thorough foundation inspection and timely repairs that support long-term stability.",
+                                                              "Learn more about available solutions and request an estimate on our <a href=\"/foundation-repair/\">foundation repair</a> page."]),
+        ],
+        faqs=[("How do I know if a foundation crack is serious?", "Widening cracks, horizontal cracks, visible wall movement or several warning signs together should be checked by a professional."),
+              ("Do you inspect foundations for free?", "Yes. Foundation inspections and estimates are free across Chicago and the suburbs.")],
+    ),
 ]
 
 
@@ -98,13 +139,16 @@ def article_body(a):
            '    <div class="container container--narrow article-body">',
            f'      <p class="article-meta">Prairie Shield Learning Center &middot; Updated October 2026</p>',
            ]
+    if a.get("image"):
+        src, alt = a["image"]
+        out.append(f'      <img class="article-image" src="{src}" alt="{alt}" width="1200" height="800" style="width:100%;height:auto;border-radius:8px;margin:0 0 1.5rem">')
     for heading, ps in a["sections"]:
         if heading:
             out.append(f"      <h2>{heading}</h2>")
-        if heading and heading.startswith(("Signs", "Warning", "Quick")):
+        if heading and heading.startswith(("Signs", "Warning", "Quick")) and not any(p.startswith("<") for p in ps):
             out.append("      <ul>" + "".join(f"<li>{p}</li>" for p in ps) + "</ul>")
         else:
-            out.extend(f"      <p>{p}</p>" for p in ps)
+            out.extend(f"      {p}" if p.startswith(("<h3>", "<ul>")) else f"      <p>{p}</p>" for p in ps)
     out.append('      <div class="article-cta"><p><strong>Want a professional opinion?</strong> Inspections are free across Chicago and the suburbs.</p>'
                '<a class="btn btn--primary" href="#lead-form" data-cta data-location="article">Book a Free Inspection</a></div>')
     out.append("    </div>\n  </section>\n")
