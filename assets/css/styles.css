@@ -1717,3 +1717,9 @@ h1, h2, h3, h4 { color: var(--navy-deep); }
       var(--navy-deep);
   }
 }
+
+/* Footer email stays on one line; shrinks with the four-column footer */
+.site-footer a[href^="mailto:"] { white-space: nowrap; overflow-wrap: normal; }
+@media (min-width: 60em) {
+  .site-footer a[href^="mailto:"] { font-size: min(0.95rem, 1.1vw); }
+}
