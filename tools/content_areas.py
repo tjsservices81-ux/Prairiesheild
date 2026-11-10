@@ -17,7 +17,7 @@ def town_url(slug):
 COUNTIES = [
     dict(
         slug="chicago", name="Chicago", kind="city",
-        title="Chicago Basement Waterproofing &amp; Foundation Repair",
+        title="Chicago Bungalow &amp; Two-Flat Basement Waterproofing | Prairie Shield",
         desc="Basement waterproofing, foundation repair and masonry for Chicago bungalows, two-flats and greystones. Sewer backup, leaks, cracks. Free estimates, 24/7.",
         h1="Basement Waterproofing &amp; Foundation Repair in Chicago",
         lead="Bungalows, two-flats, greystones and workers&rsquo; cottages — Chicago&rsquo;s housing is old, mostly masonry and built over clay. That mix is exactly why basements here take on water.",
