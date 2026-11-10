@@ -2,39 +2,35 @@
    PRAIRIE SHIELD Waterproofing & Foundation Repair — tracking.js
    GA4 + Google Ads event tracking.
 
-   IMPORTANT — placeholder IDs. Before launch, follow
-   GOOGLE-ADS-GA4-SETUP.md and replace:
+   GA4 (G-JWKH73NLJC) is loaded here with gtag.js. Google Tag Manager
+   (GTM-MVTJZDWQ) is loaded separately in each page's <head>. Google
+   Ads IDs below are still placeholders; see GOOGLE-ADS-GA4-SETUP.md.
 
-     GA4 ID:                       G-XXXXXXXXXX
      Google Ads ID:                AW-XXXXXXXXX
      Google Ads conversion label:  XXXXXXXXXXX
-
-   The gtag.js loader snippet is intentionally NOT active until a
-   real GA4 ID is added. Events are still pushed to window.dataLayer
-   so nothing breaks and testing is possible via the console.
    ============================================================ */
 
 (function () {
   'use strict';
 
   /* ----------------------------------------------------------
-     STEP 1 (see GOOGLE-ADS-GA4-SETUP.md):
-     Uncomment this block and replace G-XXXXXXXXXX / AW-XXXXXXXXX
-     with your real IDs to activate Google tracking.
-
+     STEP 1: Google tag for GA4 — active.
+     The GTM container has no GA4 tag, so GA4 is configured here.
+     If a Google tag for G-JWKH73NLJC is ever added in GTM, delete
+     the loader and the 'config' line below (keep window.gtag), or
+     every page view will count twice.
+     ---------------------------------------------------------- */
+  var GA4_ID = 'G-JWKH73NLJC';
   var s = document.createElement('script');
   s.async = true;
-  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_ID;
   document.head.appendChild(s);
   window.dataLayer = window.dataLayer || [];
-  function gtag(){ dataLayer.push(arguments); }
+  function gtag(){ window.dataLayer.push(arguments); }
   window.gtag = gtag;
   gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');   // GA4 property
-  gtag('config', 'AW-XXXXXXXXX');   // Google Ads account
-  ---------------------------------------------------------- */
-
-  window.dataLayer = window.dataLayer || [];
+  gtag('config', GA4_ID);
+  // gtag('config', 'AW-XXXXXXXXX');   // Google Ads account (add when ready)
 
   // Current page's service, set via <body data-service="..."> on each page.
   var pageService = document.body.getAttribute('data-service') || 'general';
