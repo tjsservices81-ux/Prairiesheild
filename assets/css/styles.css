@@ -1948,3 +1948,13 @@ html.a11y-read :is(main, .site-footer) :is(p, h1, h2, h3, h4, h5, h6, li, blockq
 .faq-cats__link:hover, .faq-cats__link:focus-visible { background: var(--navy); border-color: var(--navy); color: var(--white); text-decoration: none; }
 .faq-cat { scroll-margin-top: 6rem; }
 .faq-cat .faq-item__panel a { font-weight: 600; }
+
+/* ---------- Comparison tables in articles ---------- */
+.table-scroll { overflow-x: auto; margin: 0 0 1.5rem; -webkit-overflow-scrolling: touch; }
+.compare-table { width: 100%; min-width: 30rem; border-collapse: collapse; font-size: 0.95rem; background: var(--white); }
+.compare-table th, .compare-table td { padding: 0.7rem 0.85rem; border: 1px solid var(--line); text-align: left; vertical-align: top; }
+.compare-table thead th { background: var(--navy); color: var(--white); font-family: var(--font-heading); font-weight: 700; }
+.compare-table tbody th { font-family: var(--font-heading); font-weight: 700; color: var(--navy); background: #F5F7FA; }
+.article-body ol { padding-left: 1.4rem; margin: 0 0 1.25rem; }
+.article-body ol li { margin-bottom: 0.55rem; }
+[aria-labelledby="install-guide-heading"] h3 { margin-top: 1.9rem; margin-bottom: 0.6rem; }
