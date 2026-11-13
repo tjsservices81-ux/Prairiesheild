@@ -116,7 +116,7 @@ def article_cards_section(eyebrow, heading, hid, items, grey=False):
 
 
 WATERPROOFING_LINKS = [
-    ("Basement Waterproofing", "/basement-waterproofing/"),
+    ("Basement Waterproofing", "/basement-waterproofing-chicago/"),
     ("Wet Basement Repair", "/wet-basement-repair/"),
     ("Foundation Repair", "/foundation-repair/"),
     ("Foundation Crack Repair", "/foundation-crack-repair/"),
@@ -233,7 +233,7 @@ def build(page, tpl):
 
     # body: replace the template's two link sections with this page's content
     a = s.index('  <section class="section" aria-labelledby="mas-heading">')
-    b = s.index('<section class="section section--grey" aria-labelledby="why-heading">')
+    b = s.index('<section class="stats-band" aria-label="Prairie Shield at a glance">')
     s = s[:a] + page["body"] + "\n" + s[b:]
 
     # FAQs
@@ -276,7 +276,7 @@ def check(paths):
     def body(p):
         t = open(p, encoding="utf-8").read()
         a = t.index('<main id="main">')
-        b = t.index('<section class="section section--grey" aria-labelledby="why-heading">')
+        b = t.index('<section class="stats-band" aria-label="Prairie Shield at a glance">')
         faq = t[t.index('aria-labelledby="faq-heading"'):t.index('class="emergency-banner"')]
         t = t[a:b] + faq
         t = re.sub(r"(?s)<form.*?</form>|<aside.*?</aside>", " ", t)

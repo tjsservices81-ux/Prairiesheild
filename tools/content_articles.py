@@ -49,7 +49,7 @@ ARTICLES = [
                                         "It does not stop water reaching the wall, but it relieves the pressure that pushes water in and keeps it off the floor. It is installed from inside, in any weather, without touching the yard."]),
             ("Which suits most Chicagoland homes?", ["For most homes we see — bungalows, post-war block foundations and poured suburban basements — interior drain tile with a quality sump and battery backup is the most effective and practical fix. Exterior work makes sense when a wall also needs structural repair from outside, when the basement has no room for a perimeter drain, or for specific walls where outside access is easy."]),
             ("What about finished basements?", ["Interior systems are installed at the perimeter of the floor, so usually only the bottom portion of the drywall along affected walls needs to come out, not the whole room. That is a big reason they are popular in finished basements."]),
-            ("The honest answer", ["The right system is the one that addresses how water is getting in. A single leaking crack needs <a href=\"/crack-injection/\">injection</a>, not drain tile. Sewer backup needs a backflow valve. That is why we inspect first. Read more about our <a href=\"/basement-waterproofing/\">basement waterproofing</a> or <a href=\"/french-drain-drain-tile/\">drain tile systems</a>."]),
+            ("The honest answer", ["The right system is the one that addresses how water is getting in. A single leaking crack needs <a href=\"/crack-injection/\">injection</a>, not drain tile. Sewer backup needs a backflow valve. That is why we inspect first. Read more about our <a href=\"/basement-waterproofing-chicago/\">basement waterproofing</a> or <a href=\"/french-drain-drain-tile/\">drain tile systems</a>."]),
         ],
         faqs=[("Is interior waterproofing a permanent fix?", "Installed properly with a reliable sump and backup, an interior drain tile system is a long-term solution that we back with written warranty terms."),
               ("Does exterior waterproofing need a sump pump?", "Often, yes. Exterior drain tile still needs somewhere to send the water, which is usually a sump or a storm connection.")],
@@ -176,7 +176,7 @@ def hub_page():
     items = [(a["short"], f"{HUB}{a['slug']}/", a["summary"]) for a in ARTICLES]
     body = article_cards_section("Homeowner Guides", "Basement &amp; Foundation Guides", "guides-heading", items)
     body += links_section("Services", "Ready for a Repair?", "svc-heading",
-                          [("Wet Basement Repair", "/wet-basement-repair/"), ("Basement Waterproofing", "/basement-waterproofing/"),
+                          [("Wet Basement Repair", "/wet-basement-repair/"), ("Basement Waterproofing", "/basement-waterproofing-chicago/"),
                            ("Foundation Crack Repair", "/foundation-crack-repair/"), ("Sump Pump Installation", "/sump-pump-installation/")],
                           grey=True)
     return dict(

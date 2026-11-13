@@ -15,6 +15,7 @@ const MOVED = {
   '/foundation-piers/': '/helical-push-piers/',
   '/french-drain-systems/': '/french-drain-drain-tile/',
   '/tuckpointing-masonry/': '/tuckpointing/',
+  '/basement-waterproofing/': '/basement-waterproofing-chicago/',
 };
 
 function canonicalPath(pathname) {

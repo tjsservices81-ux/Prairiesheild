@@ -9,7 +9,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # (insert after this href, new href, label)
 NEW = [
-    ("/basement-waterproofing/", "/wet-basement-repair/", "Wet Basement Repair"),
+    ("/basement-waterproofing-chicago/", "/wet-basement-repair/", "Wet Basement Repair"),
     ("/foundation-crack-repair/", "/crack-injection/", "Crack Injection"),
     ("/bowed-wall-repair/", "/carbon-fiber-wall-straps/", "Carbon Fiber Wall Straps"),
     ("/carbon-fiber-wall-straps/", "/wall-anchors/", "Wall Anchors &amp; Bracing"),
