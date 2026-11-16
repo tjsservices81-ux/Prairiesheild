@@ -40,6 +40,59 @@ export default {
         return Response.redirect(CANONICAL_ORIGIN + path + url.search, 301);
       }
     }
-    return env.ASSETS.fetch(request);
+
+    // Scheduled posts: 404 until their date; their cards, sitemap entries and
+    // llms.txt lines are removed until then too.
+    const pending = Object.keys(SCHEDULED).filter(p => !isLive(SCHEDULED[p]));
+    if (pending.length === 0) return env.ASSETS.fetch(request);
+    if (pending.includes(url.pathname)) return notFound(request, env);
+
+    const res = await env.ASSETS.fetch(request);
+    const type = res.headers.get('content-type') || '';
+    if (res.status !== 200) return res;
+    if (url.pathname === '/sitemap.xml' || url.pathname === '/llms.txt') {
+      let text = await res.text();
+      for (const p of pending) {
+        text = url.pathname === '/sitemap.xml'
+          ? text.replace(new RegExp(`[ \\t]*<url>\\s*<loc>[^<]*${p}</loc>[\\s\\S]*?</url>\\n?`, 'g'), '')
+          : text.split('\n').filter(line => !line.includes(p)).join('\n');
+      }
+      return new Response(text, { status: 200, headers: freshHeaders(res.headers) });
+    }
+    if (type.includes('text/html')) {
+      const rewritten = new HTMLRewriter()
+        .on('[data-publish]', { element(el) { if (!isLive(el.getAttribute('data-publish'))) el.remove(); } })
+        .transform(res);
+      return new Response(rewritten.body, { status: 200, headers: freshHeaders(res.headers) });
+    }
+    return res;
   },
 };
+
+// Path -> first day it is visible (midnight in Chicago, 06:00 UTC in November).
+const SCHEDULED = {
+  '/learning-center/foundation-crack-repair-chicago/': '2026-11-18',
+  '/learning-center/epoxy-vs-polyurethane-crack-injection/': '2026-11-19',
+  '/learning-center/sump-pump-installation-chicago/': '2026-11-25',
+  '/learning-center/sump-pump-installation-guide/': '2026-11-26',
+};
+
+function isLive(date) {
+  return Date.now() >= Date.parse(`${date}T06:00:00Z`);
+}
+
+// Rewritten responses must not be revalidated against the static file's ETag,
+// or a browser could keep a copy made before a post went live.
+function freshHeaders(headers) {
+  const h = new Headers(headers);
+  h.delete('etag');
+  h.delete('content-length');
+  h.set('cache-control', 'no-cache');
+  return h;
+}
+
+async function notFound(request, env) {
+  // Any missing path makes the assets binding answer with the site's 404 page.
+  const page = await env.ASSETS.fetch(new Request(new URL('/__not-published-yet__/', request.url), request));
+  return new Response(page.body, { status: 404, headers: freshHeaders(page.headers) });
+}
